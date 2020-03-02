@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core.apps.CoreConfig',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -121,12 +121,12 @@ USE_TZ = True
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = "/media/"
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+# STATICFILES_DIRS = [ os.path.join(BASE_DIR, STATIC_ROOT),]
 
 REGISTRATION_DEFAULT_FROM_EMAIL = True
 REGISTRATION_EMAIL_HTML = True

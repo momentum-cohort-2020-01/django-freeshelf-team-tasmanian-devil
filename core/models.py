@@ -34,11 +34,3 @@ class Author(models.Model):
 
     def __str__(self):
         return f'{self.name}'
-
-
-class Image(models.Model):
-    image = models.FileField(
-        upload_to='images', null=True, verbose_name=None)
-
-    def __str__(self):
-        return f'{self.image}'

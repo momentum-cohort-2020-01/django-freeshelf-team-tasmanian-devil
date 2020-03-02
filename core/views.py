@@ -7,10 +7,7 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def homepage(request):
     books = Book.objects.all()
-    subjects = Subject.objects.all()
-    authors = Author.objects.all()
-    images = Image.objects.all()
-    return render(request, 'core/index.html', {'books': books, 'subjects': subjects, 'authors': authors, 'images': images})
+    return render(request, 'core/index.html', {'books': books})
 
 
 def book_detail(request, pk):
@@ -28,6 +25,6 @@ def subject(request, pk):
     return render(request, 'core/subject.html', {'subject': subject, 'pk': pk})
 
 
-def image(request, pk):
-    image = Image.objects.get(pk=pk)
-    return render(request, 'core/image.html', {'image': image, 'pk': pk})
+# def image(request, pk):
+#     image = Image.objects.get(pk=pk)
+#     return render(request, 'core/image.html', {'image': image, 'pk': pk})

@@ -30,6 +30,9 @@
                 <a href="{% url 'subject' book.subject.pk %}">{{ book.subject }}</a>                
                 <a href = {{book.external_link}}>{{book.external_link}}</a>
             </p>
+            {% if book in favorite_books %}
+            <p style="color: white">DO SOMETHING</p>
+            {% endif %}
         </div>
 
     {% endfor %}

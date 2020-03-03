@@ -8,8 +8,18 @@
 {% endblock %}
 
 {% block content %}
-<h1>These are {{tag.name}} Books</h1>
-{% for book in books %}
-<ul>{{book}}</ul>
-{% endfor %}
+<div class='nav-bar'>
+  <h1 class='page-title'>Free Online Coding Books</h1>
+  <nav>
+      <ul class='nav'>
+          <li><a class="nav-item" href="{% url 'homepage' %}">Home</a></li>
+          {% for book in books %}
+          <li ><a class='nav-item' href="{% url 'subject' book.subject.pk %}">{{ book.subject.genre }}</a></li>
+          {% endfor %}
+      </ul>
+  </nav>
+</div>
+
+<h1>These are {{ subject.genre }} Books</h1>
+<p> {{ subject.about }}</p>
 {% endblock %}

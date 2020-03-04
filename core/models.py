@@ -8,12 +8,14 @@ class Book(models.Model):
     title = models.CharField(max_length=60)
     author = models.ForeignKey(
         'Author',
+        related_name='book',
         on_delete=models.SET_NULL,null=True)
     external_link = models.URLField()
     published_date = models.DateField()
     write_up = models.TextField()
     subject = models.ForeignKey(
         'Subject',
+        related_name='book',
         on_delete=models.SET_NULL,null=True)
     image = models.FileField(
         upload_to='images', null=True, verbose_name=None)

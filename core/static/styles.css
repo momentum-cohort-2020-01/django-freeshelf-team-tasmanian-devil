@@ -12,7 +12,8 @@ img {
 .page-title {
     font-family: 'Fugaz One';
     font-size: 3rem;
-    color: white
+    color: white;
+    text-shadow: 2px 2px red;
 }
 
 .row {
@@ -24,6 +25,7 @@ img {
     background-color: gray;
     width: 100%;
     padding: 1rem;
+    border-bottom: 1px solid red;
 }
 .nav-item {
     margin-right: 1rem;
